@@ -44,7 +44,7 @@
 if (user) {
   // User is signed in.
 	
-	user.innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
+	document.getElementById('user').innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
 	console.log(user)
 } else {
   // No user is signed in.
