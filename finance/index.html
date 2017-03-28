@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Финансита</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<form id="add_goods">
+		<div class="input_data">
+			<label>Введите товар</label>
+			<input type="text" id="add_goods_name" required autofocus>
+		</div>
+		<div class="input_data">
+			<label>Введите сумму</label>
+			<input type="number" id="add_goods_price" required step="0.01" min="0">
+		</div>
+		<button type="submit">Добавить</button>
+	</form>
+	
+	
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyBSUnWiQcL7R12d_IdGi0_0z3rAIuzKyvw",
+		authDomain: "finance-ed0a6.firebaseapp.com",
+		databaseURL: "https://finance-ed0a6.firebaseio.com",
+		storageBucket: "finance-ed0a6.appspot.com",
+		messagingSenderId: "387748315109"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	
+	<script src="js/add.js"></script>
+</body>
+</html>
