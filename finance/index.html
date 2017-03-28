@@ -5,7 +5,7 @@
 	<title>Финансита</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body><div id="user"></div>
 	<form id="add_goods">
 		<div class="input_data">
 			<label>Введите товар</label>
@@ -43,7 +43,8 @@
 		
 if (user) {
   // User is signed in.
-	alert('Привет, '+user.displayName)
+	
+	user.innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
 	console.log(user)
 } else {
   // No user is signed in.
