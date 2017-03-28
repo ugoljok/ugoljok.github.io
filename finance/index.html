@@ -40,9 +40,10 @@
 	
 	<script>
 		firebase.auth().onAuthStateChanged(function(user) {
-		console.log(user)
+		
 if (user) {
   // User is signed in.
+	aler('Привет, '+user.displayName)
 	console.log(user)
 } else {
   // No user is signed in.
