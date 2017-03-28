@@ -47,7 +47,7 @@ if (user) {
 } else {
   // No user is signed in.
 	var provider = new firebase.auth.GoogleAuthProvider();
-		provider.addScope('https://www.googleapis.com/auth/plus.login');
+		//provider.addScope('https://www.googleapis.com/auth/plus.login');
 		firebase.auth().signInWithPopup(provider).then(function(result) {
 		  // This gives you a Google Access Token. You can use it to access the Google API.
 		  var token = result.credential.accessToken;
