@@ -5,10 +5,11 @@ app.db = {
 			//если юзер существует в БД
 			if(snapshot.val()){
 				var user_data = snapshot.val();
-				console.log(user_data)
+				console.log(1)
 			//иначе добавляем юзера
 			}else{
 				app.db.set(path, val);
+				console.log(2)
 			}
 		});
 	},
