@@ -12,10 +12,13 @@ app.init = function (user){
 		lastVisit: new Date().getTime()	// время последнего захода	
 	}
 	
+	//получаем данные пользователя и выводим на экран
+app.db.get('users/'+app.uid+'/data', fanction(result){
+	log(result)
+	document.getElementById('user').innerHTML = '<img src="' +result.photoURL+ '"><br>' +result.name;
+	app.db.set('users/'+app.uid+'/data/lastVisit', new Date().getTime())
+}); 
 	
-	app.db.get('users/'+app.uid+'/data', log); //получаем данные пользователя
-	
-	
-	//document.getElementById('user').innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
+
 	
 }
