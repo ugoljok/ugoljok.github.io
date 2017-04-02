@@ -16,7 +16,7 @@ app.db = {
 	//запись
 	set: function(path, val){
 		firebase.database().ref(path).set(val);
-		//console.log(path, val)
+		console.log(3)
 	}
 };
 
