@@ -13,7 +13,8 @@ app.init = function (user){
 	}
 	
 	
-	console.log(app.db.get('users/'+app.uid+'/data', user_data)); //получаем данные пользователя
+	var res = app.db.get('users/'+app.uid+'/data', user_data); //получаем данные пользователя
+	console.log(res)
 	//document.getElementById('user').innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
 	
 }
