@@ -1,6 +1,6 @@
 app.db = {
 	// получение
-	get: function(path){
+	get: function(path, val){
 		firebase.database().ref(path).once('value').then(function(snapshot) {
 			//если юзер существует в БД
 			if(snapshot.val()){
