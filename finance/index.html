@@ -48,8 +48,8 @@
 			database.ref('users/' + userId).once('value').then(function(snapshot) {
 				
 				if(snapshot.val()){
-				var username = snapshot.val().username;
-					log(snapshot.val())
+				var username = snapshot.val().displayName;
+					log(snapshot.val(), username)
 				}else{
 					writeUserData(userId, name, email, imageUrl);
 				}
