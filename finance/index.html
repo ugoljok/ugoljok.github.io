@@ -25,52 +25,10 @@
 	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
-	<script src="js/auth.js"></script>
-	
-	<script>
-		var database = firebase.database(); // подключение к БД
-		
-		// запись в БД
-		function writeUserData(userId, name, email, imageUrl, lastVisit) {
-		  database.ref('users/' + userId).set({
-			displayName: name,
-			email: email,
-			profile_picture : imageUrl,
-			lastVisit: new Date().getTime()
-		  });
-		}
-		
-		
-		firebase.auth().onAuthStateChanged(function(user) { // проверка на авторизованность
-			var userId = firebase.auth().currentUser.uid;
-			var name = firebase.auth().currentUser.displayName;
-			var email = firebase.auth().currentUser.email;
-			var imageUrl = firebase.auth().currentUser.photoURL;
-			database.ref('users/' + userId).once('value').then(function(snapshot) {
-				
-				if(snapshot.val()){
-				var username = snapshot.val().displayName;
-					log(snapshot.val().lastVisit)
-					database.ref('users/'+userId+'/lastVisit').set(new Date().getTime())
-					
-				}else{
-					writeUserData(userId, name, email, imageUrl);
-				}
-				// ...
-			});
-			
-		})
-		
-			
-	
-		
-		
-	
-		
-		
-	</script>
-	
-	
+
 	<script src="js/add.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/app_db.js"></script>
+	<script src="js/auth.js"></script>
 </body>
 </html>
