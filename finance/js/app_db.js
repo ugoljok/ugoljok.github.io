@@ -5,7 +5,7 @@ app.db = {
 			//если юзер существует в БД
 			if(snapshot.val()){
 				//var user_data = snapshot.val();
-				app.db.set(path+'/lastVisit') = new Date().getTime();
+				app.db.set(path+'/lastVisit', new Date().getTime());
 				console.log(1)
 			//иначе добавляем юзера
 			}else{
