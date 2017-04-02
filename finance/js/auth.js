@@ -11,7 +11,23 @@
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 		  // User is signed in.
-			app.init(user);
+			app.db.get('users/'+app.uid+'/data', function(result){
+				if(result==='undefined'){
+					//данные пользователя
+					var user_data = {
+						uid: user.uid, //id
+						name: user.displayName,
+						photo: user.photoURL,
+						email: user.email,
+						lastVisit: new Date().getTime()	// время последнего захода	
+					}
+					app.db.set('users/'+app.uid+'/data', user_data, function(){app.init(user);});
+				}else{
+					app.db.set('users/'+app.uid+'/data/lastVisit', new Date().getTime());
+					app.init();
+				}
+			}); 
+			
 			//console.log(user)
 		} else {
 		  // No user is signed in.
