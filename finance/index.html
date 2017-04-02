@@ -31,11 +31,12 @@
 		var database = firebase.database(); // подключение к БД
 		
 		// запись в БД
-		function writeUserData(userId, name, email, imageUrl) {
+		function writeUserData(userId, name, email, imageUrl, lastVisit) {
 		  database.ref('users/' + userId).set({
 			displayName: name,
 			email: email,
-			profile_picture : imageUrl
+			profile_picture : imageUrl,
+			lastVisit: new Date().getTime()
 		  });
 		}
 		
@@ -49,7 +50,9 @@
 				
 				if(snapshot.val()){
 				var username = snapshot.val().displayName;
-					log(snapshot.val(), username)
+					log(snapshot.val().lastVisit)
+					database.ref('users/'+userId+'/lastVisit').set(new Date().getTime())
+					
 				}else{
 					writeUserData(userId, name, email, imageUrl);
 				}
