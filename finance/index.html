@@ -29,12 +29,16 @@
 	
 	<script>
 		var database = firebase.database();
-		var userId = firebase.auth().currentUser.uid;
+		firebase.auth().onAuthStateChanged(function(user) {
+			var userId = firebase.auth().currentUser.uid;
 		database.ref('/users/' + userId).once('value').then(function(snapshot) {
 			log(snapshot)
 			var username = snapshot.val().username;
   			// ...
 		});
+			
+		})
+		
 			
 	
 		
