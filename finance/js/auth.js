@@ -12,7 +12,8 @@
 		if (user) {
 		  // User is signed in.
 			app.db.get('users/'+user.uid+'/data', function(result){
-				if(result==='undefined'){
+				log(result)
+				if(!result){
 					//данные пользователя
 					var user_data = {
 						uid: user.uid, //id
