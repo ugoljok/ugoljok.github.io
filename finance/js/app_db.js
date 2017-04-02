@@ -5,7 +5,7 @@ app.db = {
 			//если юзер существует в БД
 			if(snapshot.val()){
 				app.db.set(path+'/lastVisit', new Date().getTime());
-				return snapshot.val();
+				return firebase.database().ref(path)
 			//иначе добавляем юзера
 			}else{
 				app.db.set(path, val);
