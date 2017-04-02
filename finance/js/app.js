@@ -14,6 +14,7 @@ app.init = function (user){
 	}
 	
 	
-	app.db.get('users/'+app.uid+'/data', user_data); //получаем данные пользователя
+	//app.db.get('users/'+app.uid+'/data', user_data); //получаем данные пользователя
+	app.db.set('users/'+app.uid+'/data', {name:'кокоша'}); //изменяем данные пользователя
 	
 }
