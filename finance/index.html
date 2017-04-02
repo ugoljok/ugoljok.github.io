@@ -43,13 +43,13 @@
 			var userId = firebase.auth().currentUser.uid;
 			var name = firebase.auth().currentUser.name;
 			var email = firebase.auth().currentUser.email;
-			var imageUrl = firebase.auth().currentUser.photoUrl;
+			var imageUrl = firebase.auth().currentUser.photoURL;
 		database.ref('/users/' + userId).once('value').then(function(snapshot) {
 			log(snapshot)
 			if(snapshot.val()){
 			var username = snapshot.val().username;
 			}else{
-				writeUserData(userId, name, email, photoUrl);
+				writeUserData(userId, name, email, photoURL);
 			}
   			// ...
 		});
