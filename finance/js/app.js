@@ -4,6 +4,6 @@ app.uid= null //идентификатор пользователя
 app.init = function (user){
 	app.uid = user.uid; //пишем идентификатор в глобальный объект
 	//получаем данные пользователя и выводим на экран
-	document.getElementById('user').innerHTML = '<img src="' +result.photo+ '"><br>' +result.name;
+	document.getElementById('user').innerHTML = '<img src="' +user.photo+ '" width="50"><br>' +user.name;
 	
 }

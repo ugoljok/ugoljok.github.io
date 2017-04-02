@@ -21,10 +21,10 @@
 						email: user.email,
 						lastVisit: new Date().getTime()	// время последнего захода	
 					}
-					app.db.set('users/'+app.uid+'/data', user_data, function(){app.init(user);});
+					app.db.set('users/'+app.uid+'/data', user_data, function(){app.init(user_data);});
 				}else{
 					app.db.set('users/'+app.uid+'/data/lastVisit', new Date().getTime());
-					app.init(user);
+					app.init(result);
 				}
 			}); 
 			
