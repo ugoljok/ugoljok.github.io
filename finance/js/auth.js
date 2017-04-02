@@ -12,7 +12,7 @@
 		if (user) {
 		  // User is signed in.
 			app.init(user);
-			console.log(user)
+			//console.log(user)
 		} else {
 		  // No user is signed in.
 			var provider = new firebase.auth.GoogleAuthProvider();

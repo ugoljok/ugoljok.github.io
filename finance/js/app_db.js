@@ -4,8 +4,8 @@ app.db = {
 		firebase.database().ref(path).once('value').then(function(snapshot) {
 			//если юзер существует в БД
 			if(snapshot.val()){
-				var user = snapshot.val();
-				console.log(user)
+				var user_data = snapshot.val();
+				console.log(user_data)
 			//иначе добавляем юзера
 			}else{
 				app.db.set(path, val);
