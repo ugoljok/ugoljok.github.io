@@ -28,10 +28,11 @@
 	<script src="js/auth.js"></script>
 	
 	<script>
-		var database = firebase.database('finance-ed0a6'); // подключение к БД
+		var database = firebase.database(); // подключение к БД
+		var db='finance-ed0a6' //имя БД
 		// запись в БД
 		function writeUserData(userId, name, email, imageUrl) {
-		  database.ref('users/' + userId).set({
+		  database.ref(db+'/users/' + userId).set({
 			username: name,
 			email: email,
 			profile_picture : imageUrl
@@ -44,7 +45,7 @@
 			var name = firebase.auth().currentUser.name;
 			var email = firebase.auth().currentUser.email;
 			var imageUrl = firebase.auth().currentUser.photoURL;
-			database.ref('/users/' + userId).once('value').then(function(snapshot) {
+			database.ref(db+'/users/' + userId).once('value').then(function(snapshot) {
 				log(snapshot)
 				if(snapshot.val()){
 				var username = snapshot.val().username;
