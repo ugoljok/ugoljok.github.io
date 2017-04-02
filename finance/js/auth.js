@@ -11,7 +11,7 @@
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 		  // User is signed in.
-			app.db.get('users/'+app.uid+'/data', function(result){
+			app.db.get('users/'+user.uid+'/data', function(result){
 				if(result==='undefined'){
 					//данные пользователя
 					var user_data = {
