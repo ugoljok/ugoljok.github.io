@@ -24,7 +24,7 @@
 					app.db.set('users/'+app.uid+'/data', user_data, function(){app.init(user);});
 				}else{
 					app.db.set('users/'+app.uid+'/data/lastVisit', new Date().getTime());
-					app.init();
+					app.init(user);
 				}
 			}); 
 			
