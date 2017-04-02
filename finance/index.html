@@ -33,7 +33,7 @@
 		// запись в БД
 		function writeUserData(userId, name, email, imageUrl) {
 		  database.ref('users/' + userId).set({
-			username: name,
+			displayName: name,
 			email: email,
 			profile_picture : imageUrl
 		  });
@@ -42,7 +42,7 @@
 		
 		firebase.auth().onAuthStateChanged(function(user) { // проверка на авторизованность
 			var userId = firebase.auth().currentUser.uid;
-			var name = firebase.auth().currentUser.name;
+			var name = firebase.auth().currentUser.displayName;
 			var email = firebase.auth().currentUser.email;
 			var imageUrl = firebase.auth().currentUser.photoURL;
 			database.ref('users/' + userId).once('value').then(function(snapshot) {
