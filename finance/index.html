@@ -28,6 +28,8 @@
 	<script src="js/auth.js"></script>
 	
 	<script>
+		var database = firebase.database();
+		
 		function writeUserData(userId, name, email, imageUrl) {
   database.ref('users/' + userId).set({
     username: name,
@@ -36,7 +38,7 @@
   });
 }
 		
-		var database = firebase.database();
+		
 		firebase.auth().onAuthStateChanged(function(user) {
 			var userId = firebase.auth().currentUser.uid;
 			var name = firebase.auth().currentUser.name;
