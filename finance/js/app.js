@@ -15,7 +15,7 @@ app.init = function (user){
 	//получаем данные пользователя и выводим на экран
 app.db.get('users/'+app.uid+'/data', function(result){
 	log(result)
-	document.getElementById('user').innerHTML = '<img src="' +result.photoURL+ '"><br>' +result.name;
+	document.getElementById('user').innerHTML = '<img src="' +result.photo+ '"><br>' +result.name;
 	app.db.set('users/'+app.uid+'/data/lastVisit', new Date().getTime())
 }); 
 	
