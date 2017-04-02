@@ -2,7 +2,6 @@ var app={};
 app.uid= null //идентификатор пользователя
 //тщчка инициализации приложения
 app.init = function (user){
-	//document.getElementById('user').innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
 	app.uid = user.uid; //пишем идентификатор в глобальный объект
 	//данные пользователя
 	var user_data = {
@@ -14,6 +13,7 @@ app.init = function (user){
 	}
 	
 	
-	app.db.get('users/'+app.uid+'/data', user_data); //получаем данные пользователя
+	console.log(app.db.get('users/'+app.uid+'/data', user_data)); //получаем данные пользователя
+	//document.getElementById('user').innerHTML = '<img src="' +user.photoURL+ '"> '+user.displayName;
 	
 }
