@@ -9,7 +9,7 @@ app.db = {
 	set: function(path, val, callback){
 		firebase.database().ref(path).set(val).then(function(){
 			if(typeof(callback)==='function'){
-				calback();
+				callback();
 			}
 		});
 	}
