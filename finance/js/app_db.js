@@ -5,13 +5,13 @@ app.db = {
 			//если юзер существует в БД
 			if(snapshot.val()){
 				//var user_data = snapshot.val();
-				this->set(path+'/lastVisit') = new Date().getTime();
+				app.db.set(path+'/lastVisit') = new Date().getTime();
 				console.log(1)
 			//иначе добавляем юзера
 			}else{
-				this->set(path, val);
+				app.db.set(path, val);
 				console.log(2)
-				this->get(path,val);
+				app.db.get(path,val);
 				console.log(111111111)
 			}
 		});
